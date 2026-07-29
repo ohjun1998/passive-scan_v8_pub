@@ -46,7 +46,7 @@ def run_mixer():
     for file_path in txt_files:
         if not os.path.isfile(file_path): continue
         filename = os.path.basename(file_path).lower()
-        match = re.match(r'^(.*)_(linkfinder|trufflehog|gau|waybackurls)\.txt$', filename)
+        match = re.match(r'^(.*)_(linkfinder|trufflehog|gau|waybackurls)(?:_[0-9]{2})?\.txt$', filename)
         if not match: continue
         
         safe_domain = match.group(1)
