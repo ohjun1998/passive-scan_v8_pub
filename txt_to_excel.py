@@ -272,7 +272,7 @@ def build_advanced_excel_report():
 
     for file_path in glob.glob('results/*.*'):
         filename = os.path.basename(file_path).lower()
-        match = re.match(r'^(.*)_(linkfinder|trufflehog|gau|waybackurls|katana)\.txt$', filename)
+        match = re.match(r'^(.*)_(linkfinder|trufflehog|gau|waybackurls|katana)(?:_[0-9]{2})?\.txt$', filename)
         if not match: continue
 
         safe_domain = match.group(1)
